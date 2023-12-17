@@ -29,17 +29,22 @@ boxes.forEach((box) => {
     if (turnO) {
       //playerO
       box.innerText = "O";
+      box.style.backgroundColor= "red";
       turnO = false;
+      // document.body.style.backgroundColor = "red";
     } else {
       //playerX
       box.innerText = "X";
       turnO = true;
+      box.style.backgroundColor= "#007200";
+      // document.body.style.backgroundColor = "blue";
     }
     box.disabled = true;
 
     checkWinner();
   });
 });
+
 
 const disableboxes = () => {
   for (let box of boxes){
@@ -54,6 +59,7 @@ const enableboxes = () => {
   }
    
 };
+
 
 const showWinner = (winner) => {
   msg.innerText = `Congratulation, winner is ${winner} `;
